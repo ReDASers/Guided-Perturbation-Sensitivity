@@ -1,6 +1,6 @@
-# Representation Stability (RS) for Adversarial Text Detection
+# Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
 
-RS is a novel adversarial text detection system that analyzes word-level sensitivity patterns through guided perturbations based on different importance heuristics. The system detects adversarial examples by examining how model predictions change when words are systematically masked according to attribution methods.
+GPS is a novel adversarial text detection system that analyzes word-level sensitivity patterns through guided perturbations based on different importance heuristics. The system detects adversarial examples by examining how model predictions change when words are systematically masked according to attribution methods.
 
 ## Architecture
 
@@ -52,7 +52,7 @@ RS operates through four key stages:
 RS supports both default pre-trained models and custom models:
 
 - **Default Models**: Uses fine-tuned models from the `redasers` HuggingFace community (redasers/roberta_ag_news, redasers/deberta_imdb, etc.)
-  - Available models: https://huggingface.co/collections/redasers/representation-stability-689396925331dfaddaf59f09
+  - Available models: https://huggingface.co/collections/redasers/guided-perturbation-sensitivity
 - **Custom Models**: Specify any HuggingFace model ID or local model path using `--model_path`
 
 ## Usage
@@ -97,7 +97,7 @@ gps/scripts/run_all_experiments.bat
 
 ## Feature Extraction Only
 
-To extract RS features without training detection models (for use with external classifiers):
+To extract GPS features without training detection models (for use with external classifiers):
 
 ```bash
 # Extract features only - outputs will be saved as JSON files (uses default redasers model)
@@ -147,3 +147,4 @@ If you use this implementation, please cite the original paper:
       url={https://arxiv.org/abs/2508.11667}, 
 }
 ```
+
