@@ -1,12 +1,12 @@
-# Assessing Representation Stability for Transformer Models
+# Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
 
-This repository contains the implementation and experimental code for adversarial text detection methods, including our novel **Representation Stability (RS)** approach and implementations of two state-of-the-art baseline methods.
+This repository contains the implementation and experimental code for adversarial text detection methods, including our novel **Guided Perturbation Sensitivity (GPS)** approach and implementations of two state-of-the-art baseline methods.
 
 ## Overview
 
 Adversarial text detection is a critical security challenge in natural language processing. This repository provides:
 
-- **RS**: Our adversarial detection method using representation stability analysis
+- **GPS**: Our adversarial detection method using embedding stability analysis
 - **Sharpness-based Detection**: Implementation of loss landscape sharpness analysis (Zheng et al., ACL 2023)
 - **TextShield**: Implementation of Adaptive Word Importance detection (Shen et al., ICLR 2023)
 
@@ -15,11 +15,11 @@ All methods are evaluated on three datasets (AG News, IMDB, Yelp) with two model
 ## Repository Structure
 
 ```
-representation-stability/
+Guided-Perturbation-Sensitivity/
 ├── data/                     # Adversarial datasets by dataset/model/attack
 ├── models/                   # Fine-tuned victim models
 ├── output/                   # Experimental results
-├── gps/                      # RS method implementation
+├── gps/                      # GPS method implementation
 ├── sharpness/                # Sharpness-based detection
 ├── textshield/               # TextShield (AWI) implementation
 └── requirements.txt          # Dependencies
@@ -27,7 +27,7 @@ representation-stability/
 
 ## Detection Methods
 
-### 🔬 RS (Representation Stability)
+### 🔬 GPS (Guided Perturbation Sensitivity)
 Our method that analyzes word-level sensitivity patterns through guided perturbations based on attribution methods.
 
 **Key Features:**
@@ -38,7 +38,7 @@ Our method that analyzes word-level sensitivity patterns through guided perturba
 
 **Usage:**
 ```bash
-# Run RS with attention rollout on AG News (uses default redasers/roberta_ag_news)
+# Run GPS with attention rollout on AG News (uses default redasers/roberta_ag_news)
 python -m gps --model_name roberta_ag_news --data_dir data/ag_news/roberta/textfooler --use_attention --top_n 20
 
 # Use a custom HuggingFace model
@@ -108,7 +108,7 @@ python textshield/train_evaluate_detector.py --dataset imdb --model roberta --at
 
 **Option 1: Individual Experiments**
 ```bash
-# RS with different strategies
+# GPS with different strategies
 python -m gps --model_name roberta_imdb --data_dir data/imdb/roberta/textfooler --use_attention --top_n 20
 python -m gps --model_name roberta_imdb --data_dir data/imdb/roberta/textfooler --use_saliency --top_n 20
 
@@ -122,7 +122,7 @@ python textshield/train_evaluate_detector.py --dataset imdb --model roberta --at
 
 **Option 2: Batch Experiments**
 ```bash
-# Run all RS experiments
+# Run all GPS experiments
 gps/scripts/run_all_experiments.bat
 
 # Run all sharpness experiments  
@@ -151,7 +151,7 @@ data/{dataset}/{model}/{attack}/
 The system supports both pre-trained HuggingFace models and custom models:
 
 **Default HuggingFace Models:**
-- Fine-tuned models from the `redasers` community: https://huggingface.co/collections/redasers/representation-stability-689396925331dfaddaf59f09
+- Fine-tuned models from the `redasers` community: https://huggingface.co/collections/redasers/guided-perturbation-sensitivity
 - Available models: `redasers/roberta_ag_news`, `redasers/deberta_imdb`, `redasers/roberta_yelp`, etc.
 
 **Custom Models:**
@@ -165,13 +165,13 @@ Results are automatically saved to the `output/` directory with several metrics:
 - **Performance Metrics**: Accuracy, Precision, Recall, F1-score, AUC-ROC
 - **Timing Information**: Training and evaluation time per sample
 - **Method-specific Metrics**: 
-  - RS: Ranking metrics (MRR, MAP, NDCG), overlap analysis
+  - GPS: Ranking metrics (MRR, MAP, NDCG), overlap analysis
   - Sharpness: FOSC convergence, step size adaptation
   - TextShield: Multi-channel AWI feature statistics
 
 ## Citation
 
-**RS:**
+**GPS:**
 ```bibtex
 @misc{tuck2025assessingrepresentationstabilitytransformer,
       title={Assessing Representation Stability for Transformer Models}, 
@@ -241,4 +241,5 @@ For questions or issues, please open a GitHub issue or contact the authors.
 
 
 This code is provided for academic research purposes.
+
 
