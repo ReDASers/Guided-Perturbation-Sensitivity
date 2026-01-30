@@ -173,10 +173,10 @@ Results are automatically saved to the `output/` directory with several metrics:
 
 **GPS:**
 ```bibtex
-@misc{tuck2025assessingrepresentationstabilitytransformer,
-      title={Assessing Representation Stability for Transformer Models}, 
+@misc{tuck2026guidedperturbationsensitivitygps,
+      title={Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance}, 
       author={Bryan E. Tuck and Rakesh M. Verma},
-      year={2025},
+      year={2026},
       eprint={2508.11667},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
@@ -241,5 +241,6 @@ For questions or issues, please open a GitHub issue or contact the authors.
 
 
 This code is provided for academic research purposes.
+
 
 
