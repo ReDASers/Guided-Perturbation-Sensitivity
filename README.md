@@ -173,14 +173,15 @@ Results are automatically saved to the `output/` directory with several metrics:
 
 **GPS:**
 ```bibtex
-@misc{tuck2026guidedperturbationsensitivitygps,
-      title={Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance}, 
-      author={Bryan E. Tuck and Rakesh M. Verma},
-      year={2026},
-      eprint={2508.11667},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2508.11667}, 
+@inproceedings{tuck2026gps,
+  title={Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance},
+  author={Tuck, Bryan E. and Verma, Rakesh M.},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={31},
+  pages={26019--26027},
+  year={2026},
+  doi={10.1609/aaai.v40i31.39803}
 }
 ```
 
