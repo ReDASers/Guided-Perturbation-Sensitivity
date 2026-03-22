@@ -172,6 +172,9 @@ Results are automatically saved to the `output/` directory with several metrics:
 ## Citation
 
 **GPS:**
+
+If you use this work, please cite:
+
 ```bibtex
 @inproceedings{tuck2026gps,
   title={Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance},
